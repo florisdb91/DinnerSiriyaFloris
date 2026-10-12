@@ -1345,17 +1345,9 @@ img, picture, .intro-panel-face, .intro-panel-back, .intro-seal,
   }
 }
 
-/* Eén receptiemoment: dezelfde vormgeving zonder lege tijdlijnruimte. */
-#p2 .timeline--single .timeline-item{min-height:5rem;padding-bottom:.9rem;}
-#p2 .timeline--single::before{top:-.65rem;bottom:.6rem;}
-#p2 .timeline--single + .dresscode{margin-top:1.45rem;}
-#p2 .timeline--single + .dresscode::before{top:-1.45rem;}
-@media(max-width:420px){
-  #p2 .timeline--single .timeline-item{grid-template-columns:4.9rem minmax(0,1fr);gap:.5rem;}
-  #p2 .timeline--single .timeline-time{grid-column:1;grid-row:1;}
-  #p2 .timeline--single .timeline-content{grid-column:2;grid-row:1;}
-}
-
+/* Alleen de verbindingslijn bij het enige receptiemoment verbergen.
+   Alle oorspronkelijke uitlijning, afmetingen en marges blijven intact. */
+#p2 .timeline::before{display:none;}
 </style>
 </head>
 <body>
@@ -1450,7 +1442,7 @@ img, picture, .intro-panel-face, .intro-panel-back, .intro-seal,
   </header>
   <div class="details-grid">
     <div>
-      <div class="timeline timeline--single">
+      <div class="timeline">
         <article class="timeline-item">
           <div class="timeline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.5 4.5h9l-.8 5.3c-.3 2.1-1.7 3.3-3.7 3.3s-3.4-1.2-3.7-3.3l-.8-5.3Z"/><path d="M8 13.1V20m-3 0h6"/><path d="M15.5 4.5v5.2a2.5 2.5 0 0 0 5 0V4.5M18 4.5V20"/></svg></div>
           <div class="timeline-time" data-t="tmReception">06:00 PM</div>
@@ -1577,11 +1569,16 @@ const L = {
     dow:"Sat", dnum:"27", mon:"Mar", yearLine:"Two thousand twenty seven", cityLine:"Loei, Thailand",
     time:"Six o'clock in the Evening",
     dateTimeLine:"27 March 2027 · 06:00 PM",
-    tmReception:"06:00 PM",
+    tmWelcome:"06:00 PM", tmReception:"06:00 PM", tmEvening:"Throughout the evening",
     sideText:"A day of love, family, celebration and togetherness.",
     detailsTitle:"The Day",
     detailsSub:"Our wedding celebration",
+    welcomeTitle:"Welcome & Arrival",
+    welcomeText:"We look forward to welcoming you from 6 PM.",
     receptionTitle:"Wedding Reception",
+    receptionText:"Join us to celebrate our marriage.",
+    eveningTitle:"Celebrate Together",
+    eveningText:"A special evening with family and friends.",
     dressTitle:"Dress Code",
     dressText:"Any outfit that makes you shine and feel comfortable.",
     locationTitle:"The Location",
@@ -1625,7 +1622,7 @@ const L = {
     aboutText:"We hope to see you at our wedding and apologize if we are not able to deliver this invitation personally.",
     calBtn:"Add to calendar", calGoogle:"Google Calendar", calIcs:"Other calendar (.ics)",
     calTitle:"Wedding of Siriya & Floris",
-    calDesc:"Wedding reception at 6:00 PM at Baiboon Grand Hotel, Loei."
+    calDesc:"Guests are welcome from 6 PM, followed by the wedding reception and an evening together."
   },
 
   nl:{
@@ -1643,11 +1640,16 @@ const L = {
     dow:"Za", dnum:"27", mon:"Mrt", yearLine:"Tweeduizend zevenentwintig", cityLine:"Loei, Thailand",
     time:"Zes uur 's avonds",
     dateTimeLine:"27 maart 2027 · 18:00 uur",
-    tmReception:"18:00",
+    tmWelcome:"18:00", tmReception:"18:00", tmEvening:"De rest van de avond",
     sideText:"Een dag vol liefde, familie, geluk en samenzijn.",
     detailsTitle:"De dag",
     detailsSub:"Onze huwelijksviering",
+    welcomeTitle:"Welkom & ontvangst",
+    welcomeText:"Vanaf 18:00 uur heten we jullie van harte welkom.",
     receptionTitle:"Bruiloftsreceptie",
+    receptionText:"Vier ons huwelijk samen met ons.",
+    eveningTitle:"Samen vieren",
+    eveningText:"Een bijzondere avond met familie en vrienden.",
     dressTitle:"Dresscode",
     dressText:"Elke outfit waarin je straalt en je comfortabel voelt.",
     locationTitle:"De locatie",
@@ -1691,7 +1693,7 @@ const L = {
     aboutText:"We hopen jullie te zien op onze bruiloft en bieden onze excuses aan als we deze uitnodiging niet persoonlijk kunnen overhandigen.",
     calBtn:"Toevoegen aan agenda", calGoogle:"Google Agenda", calIcs:"Andere agenda (.ics)",
     calTitle:"Bruiloft van Siriya & Floris",
-    calDesc:"Bruiloftsreceptie om 18:00 uur bij Baiboon Grand Hotel in Loei."
+    calDesc:"Gasten zijn welkom vanaf 18:00 uur, gevolgd door de bruiloftsreceptie en een gezellige avond samen."
   },
 
   th:{
@@ -1709,11 +1711,16 @@ const L = {
     dow:"เสาร์", dnum:"27", mon:"มี.ค.", yearLine:"พ.ศ. 2570 · ค.ศ. 2027", cityLine:"จังหวัดเลย ประเทศไทย",
     time:"หกโมงเย็น",
     dateTimeLine:"27 มีนาคม 2570 · 18.00 น.",
-    tmReception:"18.00 น.",
+    tmWelcome:"18.00 น.", tmReception:"18.00 น.", tmEvening:"ตลอดช่วงค่ำ",
     sideText:"วันแห่งความรัก ครอบครัว ความสุข และการเฉลิมฉลองร่วมกัน",
     detailsTitle:"กำหนดการ",
     detailsSub:"รายละเอียดงานฉลองมงคลสมรส",
+    welcomeTitle:"ต้อนรับแขก",
+    welcomeText:"ยินดีต้อนรับแขกทุกท่านตั้งแต่เวลา 18.00 น.",
     receptionTitle:"งานเลี้ยงฉลองมงคลสมรส",
+    receptionText:"ขอเชิญร่วมฉลองมงคลสมรสไปด้วยกัน",
+    eveningTitle:"ร่วมเฉลิมฉลองด้วยกัน",
+    eveningText:"ค่ำคืนแห่งความสุขร่วมกับครอบครัวและเพื่อน ๆ",
     dressTitle:"การแต่งกาย",
     dressText:"ชุดอะไรก็ได้ที่ทำให้คุณเปล่งประกายและรู้สึกสบายตัว",
     locationTitle:"สถานที่",
@@ -1757,7 +1764,7 @@ const L = {
     aboutText:"เราหวังเป็นอย่างยิ่งว่าจะได้พบทุกท่านในงานแต่งงานของเรา และขออภัยหากไม่สามารถนำบัตรเชิญมามอบให้ด้วยตนเองได้",
     calBtn:"เพิ่มลงในปฏิทิน", calGoogle:"ปฏิทินกูเกิล", calIcs:"ปฏิทินอื่น (.ics)",
     calTitle:"งานแต่งงานของ Siriya & Floris",
-    calDesc:"งานเลี้ยงฉลองมงคลสมรส เวลา 18.00 น. ณ โรงแรมใบบุญแกรนด์ จังหวัดเลย"
+    calDesc:"ยินดีต้อนรับแขกตั้งแต่เวลา 18.00 น. จากนั้นร่วมงานเลี้ยงฉลองมงคลสมรสและใช้เวลาร่วมกันในช่วงค่ำ"
   }
 };
 
