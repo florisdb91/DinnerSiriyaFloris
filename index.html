@@ -1348,6 +1348,20 @@ img, picture, .intro-panel-face, .intro-panel-back, .intro-seal,
 /* Alleen de verbindingslijn bij het enige receptiemoment verbergen.
    Alle oorspronkelijke uitlijning, afmetingen en marges blijven intact. */
 #p2 .timeline::before{display:none;}
+/* Eén receptie-item op de plaats van het middelste originele tijdlijnitem.
+   Het tijdlijnvlak behoudt de oorspronkelijke hoogte van drie rijen
+   (3 × 7rem), zodat Dress Code, de locatiekolom en RSVP niet opschuiven. */
+#p2 .timeline{
+  min-height:21rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+#p2 .timeline .timeline-item{
+  flex:0 0 auto;
+  width:100%;
+}
+
 </style>
 </head>
 <body>
