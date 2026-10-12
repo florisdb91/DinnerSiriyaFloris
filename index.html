@@ -927,36 +927,40 @@ html.wedding-intro-lock,html.wedding-intro-lock body{overflow:hidden}
     top:0;bottom:0;
     z-index:2;
     pointer-events:none;
-    opacity:.98;
-    width:4.65%;
+    opacity:.96;
+    width:4.4%;
   }
   .intro-panel--left .intro-panel-face::before{
     right:0;
     background:linear-gradient(to right,
       transparent 0%,
-      rgba(48,6,11,0) 10%,
-      rgba(63,9,14,.55) 18%,
-      rgba(22,1,5,.96) 31%,
-      rgba(88,20,24,.98) 43%,
-      rgba(241,193,147,.97) 57%,
-      rgba(151,60,52,.96) 64%,
-      rgba(74,14,18,.92) 74%,
-      rgba(24,1,5,.9) 87%,
+      rgba(48,6,11,0) 8%,
+      rgba(32,3,8,.78) 18%,
+      rgba(92,20,24,.98) 33%,
+      rgba(148,52,45,.98) 45%,
+      rgba(247,202,156,.99) 55%,
+      rgba(255,229,191,.97) 58%,
+      rgba(162,59,50,.98) 62%,
+      rgba(91,19,24,.96) 72%,
+      rgba(28,2,7,.88) 83%,
       transparent 100%);
+    box-shadow:inset -1px 0 0 rgba(255,231,196,.22), inset -3px 0 4px rgba(0,0,0,.18);
   }
   .intro-panel--right .intro-panel-face::before{
     left:0;
     background:linear-gradient(to left,
       transparent 0%,
-      rgba(48,6,11,0) 10%,
-      rgba(63,9,14,.55) 18%,
-      rgba(22,1,5,.96) 31%,
-      rgba(88,20,24,.98) 43%,
-      rgba(241,193,147,.97) 57%,
-      rgba(151,60,52,.96) 64%,
-      rgba(74,14,18,.92) 74%,
-      rgba(24,1,5,.9) 87%,
+      rgba(48,6,11,0) 8%,
+      rgba(32,3,8,.78) 18%,
+      rgba(92,20,24,.98) 33%,
+      rgba(148,52,45,.98) 45%,
+      rgba(247,202,156,.99) 55%,
+      rgba(255,229,191,.97) 58%,
+      rgba(162,59,50,.98) 62%,
+      rgba(91,19,24,.96) 72%,
+      rgba(28,2,7,.88) 83%,
       transparent 100%);
+    box-shadow:inset 1px 0 0 rgba(255,231,196,.22), inset 3px 0 4px rgba(0,0,0,.18);
   }
 }
 /* Decorations and filigree are embossed directly into the artwork on desktop. */
@@ -971,7 +975,7 @@ html.wedding-intro-lock,html.wedding-intro-lock body{overflow:hidden}
 /* Continuous gold spine behind the wax seal.
    Keep the line uninterrupted so the closed cover looks like one physical gatefold.
    It still dissolves as soon as the doors start moving. */
-@media(min-width:701px){.intro-crease{z-index:3;opacity:.64;background:linear-gradient(90deg,transparent 0%,rgba(28,2,8,.7) 27%,rgba(211,142,97,.86) 50%,rgba(42,3,11,.7) 74%,transparent 100%);-webkit-mask-image:none;mask-image:none}
+@media(min-width:701px){.intro-crease{z-index:3;opacity:.58;background:linear-gradient(90deg,transparent 0%,rgba(32,3,9,.62) 24%,rgba(122,33,31,.78) 41%,rgba(236,189,143,.9) 50%,rgba(122,33,31,.78) 59%,rgba(32,3,9,.62) 76%,transparent 100%);-webkit-mask-image:none;mask-image:none}
 #weddingIntro.intro-opening .intro-crease{opacity:0;transition:opacity 250ms ease}}
 .intro-hint .intro-hint-th{font-size:.86em;color:#f8dfc7}
 /* Gold stamping is visible on any viewport, but stays proportional on phones. */
