@@ -1363,6 +1363,46 @@ img, picture, .intro-panel-face, .intro-panel-back, .intro-seal,
   width:100%;
 }
 
+
+/* Continuous center trim: restore the archival near-spine embossing
+   as uninterrupted vertical lines, so the gilded inner borders run
+   through the middle exactly like the rest of the cover. */
+@media (min-width:701px){
+  .intro-book-stage .intro-panel-face::before{
+    content:"";display:block;position:absolute;top:0;bottom:0;
+    z-index:2;pointer-events:none;mix-blend-mode:normal;opacity:.95;border:0;
+  }
+  .intro-book-stage .intro-panel--left .intro-panel-face::before{
+    right:0;left:auto;width:5.6%;
+    background:linear-gradient(to right,
+      transparent 0%,
+      rgba(66,7,11,.22) 16%,
+      rgba(36,1,5,.78) 34%,
+      rgba(16,0,3,.98) 47%,
+      rgba(110,33,29,.96) 53%,
+      rgba(243,185,160,.96) 59%,
+      rgba(138,53,46,.96) 65%,
+      rgba(36,1,5,.96) 75%,
+      rgba(17,0,3,.92) 92%,
+      transparent 100%);
+    -webkit-mask-image:none;mask-image:none;
+  }
+  .intro-book-stage .intro-panel--right .intro-panel-face::before{
+    left:0;right:auto;width:5%;
+    background:linear-gradient(to right,
+      rgba(18,0,3,.98) 0%,
+      rgba(45,2,7,.98) 10%,
+      rgba(112,28,31,.96) 23%,
+      rgba(158,56,60,.93) 31%,
+      rgba(90,18,22,.95) 40%,
+      rgba(86,22,24,.98) 51%,
+      rgba(247,196,175,.96) 58%,
+      rgba(174,99,88,.98) 63%,
+      rgba(102,28,29,.96) 69%,
+      transparent 84%);
+    -webkit-mask-image:none;mask-image:none;
+  }
+}
 </style>
 </head>
 <body>
